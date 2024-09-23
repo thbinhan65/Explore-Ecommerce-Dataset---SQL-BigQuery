@@ -25,7 +25,7 @@ Analyze and explore user behavior patterns in an eCommerce dataset through speci
   - Evaluate the average number of transactions per user who made purchases in July 2017.
 - Average Spend per Session:
 
-  -Calculate the average amount spent by buyers per session, focusing on buyer data for July 2017.
+  - Calculate the average amount spent by buyers per session, focusing on buyer data for July 2017.
 - Other Products Purchased:
 
   - Identify other products customers bought when they purchased the "YouTube Men's Vintage Henley" in July 2017.
