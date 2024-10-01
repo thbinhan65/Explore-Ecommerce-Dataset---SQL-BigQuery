@@ -3,7 +3,7 @@
 
 Welcome to my first project on exploring e-commerce data! This repository features the SQL script titled "Explore E-Commerce Dataset", which delves into analyzing e-commerce data using Google Analytics samples. Our goal is to derive valuable insights into customer behaviors, website performance, and transactional trends.
 
-## Project Objective: 
+## Objective: 
 Analyze and explore user behavior patterns in an eCommerce dataset through specific queries. Gain insights into website performance, customer shopping behavior, and revenue generation. Assess metrics such as total visits, bounce rates, and average transactions per user. Identify purchasing trends and conduct a cohort analysis to understand the customer journey. Use the findings to inform strategic recommendations that enhance marketing and improve customer satisfaction.
 
 ## Analysis Focus:
