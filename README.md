@@ -1,4 +1,4 @@
-## Project Title: Explore Ecommerce Dataset
+## Project Title: Website Ecommerce Performance  
 ## Introduction: 
 
 Welcome to my first project on exploring e-commerce data! This repository features the SQL script titled "Explore E-Commerce Dataset", which delves into analyzing e-commerce data using Google Analytics samples. Our goal is to derive valuable insights into customer behaviors, website performance, and transactional trends.
@@ -54,3 +54,4 @@ Welcome to my first project on exploring e-commerce data! This repository featur
 - Be able to use SQL to clean and query data according to the requirements of the task.
 - Calculate the necessary metrics to serve the analysis.
 - Identify insights from the data to support the next steps in the workflow.
+
