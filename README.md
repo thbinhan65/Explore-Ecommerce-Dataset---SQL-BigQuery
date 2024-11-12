@@ -55,6 +55,6 @@ Welcome to my first project on exploring e-commerce data! This repository featur
 - Calculate the necessary metrics to serve the analysis.
 - Identify insights from the data to support the next steps in the workflow.
 
-![image](https://github.com/user-attachments/assets/fb88ea3e-4e12-4402-ab7c-540d5bbb3b98)
+## 
 
 
