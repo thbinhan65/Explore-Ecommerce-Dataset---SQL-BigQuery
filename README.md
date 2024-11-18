@@ -60,7 +60,7 @@ Welcome to my first project on exploring e-commerce data! This repository featur
 - [Table Schema](https://support.google.com/analytics/answer/3437719?hl=en)
 
 ### Step 2: Identify the questions and issues that need to be addressed and resolved.
-- Query 1: Calculate total visit, pageview, transaction for Jan, Feb and March 2017 (order by month)
+#### Query 1: Calculate total visit, pageview, transaction for Jan, Feb and March 2017 (order by month)
 ```SQL
 SELECT
   format_date("%Y%m", parse_date("%Y%m%d", date)) as month,
@@ -76,7 +76,14 @@ ORDER BY 1;
   
 ![image](https://github.com/user-attachments/assets/60106f62-8980-4641-8d63-ed698acff49d)
 
-- Query 2: Bounce rate per traffic source in July 2017 (Bounce_rate = num_bounce/total_visit) (order by total_visit DESC)
+##### Insight:
+  - Growth Trend:
+      - The number of visits, pageviews, and transactions are increasing each month, indicating the website is experiencing growth. March had the highest activity, which could be the peak month for the website.
+  - Potential:
+      - With the clear growth trend, the website has significant potential for further growth.
+
+
+#### Query 2: Bounce rate per traffic source in July 2017 (Bounce_rate = num_bounce/total_visit) (order by total_visit DESC)
 ```SQL
 SELECT
     trafficSource.source as source,
@@ -91,7 +98,14 @@ ORDER BY total_visits DESC;
 
 ![image](https://github.com/user-attachments/assets/2903d011-6590-45cf-8bf2-e8946d129b5b)
 
-- Query 3: Revenue by traffic source by week, by month in June 2017
+##### Insight:
+  - Main Traffic Source: The largest traffic source is from google, with 38,400 visits. This indicates that google is the most effective marketing channel.
+
+  - High Bounce Rates: The bounce rates of the traffic sources are quite high, especially for youtube.com at 66.73%. This suggests the need to improve content quality and user experience to better retain visitors.
+
+  - Growth Potential: The direct source has 19,891 visits, with a lower bounce rate compared to other sources (43.266%). This could be a promising source to focus on and develop, such as by strengthening direct marketing efforts.
+
+#### Query 3: Revenue by traffic source by week, by month in June 2017
 ```SQL
 with 
 month_data as(
@@ -132,7 +146,7 @@ FROM week_data;
 
 ![image](https://github.com/user-attachments/assets/ef24ab31-532d-41e9-9075-822dd2ebb720)
 
-- Query 4: Average number of pageviews by purchaser type (purchasers vs non-purchasers) in June, July 2017.
+#### Query 4: Average number of pageviews by purchaser type (purchasers vs non-purchasers) in June, July 2017.
 ```SQL
 WITH avg_pageview6_nonpurchaser as (select 
       COUNT(DISTINCT(fullVisitorId)) as uniq_userid
@@ -174,7 +188,7 @@ ORDER BY Avg_pageview_purchaser
 
 ![image](https://github.com/user-attachments/assets/2c739087-20bf-458c-bb1a-1e2b01c08927)
 
-- Query 5: Average number of transactions per user that made a purchase in July 2017
+#### Query 5: Average number of transactions per user that made a purchase in July 2017
 ```SQL
 WITH avg_tra as (
 SELECT 
@@ -208,7 +222,7 @@ FROM avg_tra, date_edited
 
 ![image](https://github.com/user-attachments/assets/21caf6e9-120c-422d-884e-3ff11b66f6de)
 
-- Query 6: Average amount of money spent per session. Only include purchaser data in July 2017
+#### Query 6: Average amount of money spent per session. Only include purchaser data in July 2017
 ```SQL
 SELECT
     format_date("%Y%m",parse_date("%Y%m%d",date)) as month,
@@ -224,7 +238,7 @@ GROUP BY month;
 
 ![image](https://github.com/user-attachments/assets/26fa4f41-f8ad-410a-97c2-a5f71545ba5a)
 
-- Query 7: Other products purchased by customers who purchased product "YouTube Men's Vintage Henley" in July 2017. Output should show product name and the quantity was ordered.
+#### Query 7: Other products purchased by customers who purchased product "YouTube Men's Vintage Henley" in July 2017. Output should show product name and the quantity was ordered.
 ```SQL
 with buyer_list as(
     SELECT
@@ -253,7 +267,7 @@ ORDER BY quantity DESC;
 
  ![image](https://github.com/user-attachments/assets/8e667935-0623-44ee-924a-61ceaa924fed)
  
-- Query 8: Calculate cohort map from product view to addtocart to purchase in Jan, Feb and March 2017. For example, 100% product view then 40% add_to_cart and 10% purchase.
+#### Query 8: Calculate cohort map from product view to addtocart to purchase in Jan, Feb and March 2017. For example, 100% product view then 40% add_to_cart and 10% purchase.
 Add_to_cart_rate = number product  add to cart/number product view. Purchase_rate = number product purchase/number product view. The output should be calculated in product level.
 ```SQL
 with
