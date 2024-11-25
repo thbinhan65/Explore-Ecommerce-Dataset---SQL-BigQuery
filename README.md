@@ -146,6 +146,12 @@ FROM week_data;
 
 ![image](https://github.com/user-attachments/assets/ef24ab31-532d-41e9-9075-822dd2ebb720)
 
+##### Insight:
+  - The data is aggregated both monthly and weekly, allowing analysis of revenue trends at different granularities.
+  - The primary data source is direct ((direct)), but there is also one source from google.
+  - The revenue figures show significant variation across time periods and data sources. Further analysis is needed to understand the driving factors.
+  - With this detailed data, in-depth analysis can be performed on revenue trends, comparisons between data sources, and identification of the causes behind the fluctuations.
+
 #### Query 4: Average number of pageviews by purchaser type (purchasers vs non-purchasers) in June, July 2017.
 ```SQL
 WITH avg_pageview6_nonpurchaser as (select 
@@ -188,6 +194,15 @@ ORDER BY Avg_pageview_purchaser
 
 ![image](https://github.com/user-attachments/assets/2c739087-20bf-458c-bb1a-1e2b01c08927)
 
+##### Insight:
+
+  - The average number of page views for customers who have made a purchase increased from 94.02 to 124.24, an increase of around 32%.
+  - The average number of page views for customers who have not made a purchase increased from 316.87 to 334.06, an increase of around 5.4%. 
+  - This shows that the increase in the average number of page views for customers who have made a purchase is much higher than for customers who have not made a purchase.
+  - The data shows that customers who have not made a purchase view an average of more pages than customers who have made a purchase, which could be because they are searching for information and considering a purchase.
+  - Understanding the behavior of the group of customers who have not made a purchase better can help improve the user experience and increase the conversion rate.
+  - Additionally, tracking and comparing the trends in page views between the two customer groups can also provide useful information to adjust marketing and sales strategies.
+
 #### Query 5: Average number of transactions per user that made a purchase in July 2017
 ```SQL
 WITH avg_tra as (
@@ -222,6 +237,9 @@ FROM avg_tra, date_edited
 
 ![image](https://github.com/user-attachments/assets/21caf6e9-120c-422d-884e-3ff11b66f6de)
 
+##### Insight:
+  - Average total transactions per user: In July 2017, each unique user performed an average of more than 4 transactions.
+
 #### Query 6: Average amount of money spent per session. Only include purchaser data in July 2017
 ```SQL
 SELECT
@@ -237,6 +255,10 @@ GROUP BY month;
 - Result_Q6:
 
 ![image](https://github.com/user-attachments/assets/26fa4f41-f8ad-410a-97c2-a5f71545ba5a)
+
+##### Insight:
+  - The SQL query calculates the average revenue per user visit (avg_revenue_by_user_per_visit) by dividing the total product revenue (sum(product.productRevenue)) by the total number of visits (sum(totals.transactions)).
+  - The result shows that in July 2017, the average revenue per user visit was $43.85.
 
 #### Query 7: Other products purchased by customers who purchased product "YouTube Men's Vintage Henley" in July 2017. Output should show product name and the quantity was ordered.
 ```SQL
@@ -266,6 +288,12 @@ ORDER BY quantity DESC;
 - Result_7:
 
  ![image](https://github.com/user-attachments/assets/8e667935-0623-44ee-924a-61ceaa924fed)
+
+ ##### Insight:
+ 
+  - The SQL query first identifies the set of customers who purchased the "YouTube Men's Vintage Henley" product and had at least one transaction.
+  - It then aggregates the quantities of other products purchased by these customers, excluding the "YouTube Men's Vintage Henley" product.
+  - The results show the top 4 most frequently purchased products by these customers, providing insights into their buying behavior and potential cross-selling opportunities.
  
 #### Query 8: Calculate cohort map from product view to addtocart to purchase in Jan, Feb and March 2017. For example, 100% product view then 40% add_to_cart and 10% purchase. Add_to_cart_rate = number product  add to cart/number product view. Purchase_rate = number product purchase/number product view. The output should be calculated in product level.
 ```SQL
@@ -321,6 +349,17 @@ ORDER BY pv.month;
 - Result_Q8
 
 ![image](https://github.com/user-attachments/assets/23aae79d-0d66-4e37-bc2a-de6015ecb66d)
+
+##### Insight 1: Add-to-cart rate and purchase rate
+
+  - The add-to-cart rate ranged from 28.47% to 37.29% during the first 3 months of 2017.
+  - The purchase rate ranged from 8.31% to 12.64% during the same period.
+##### Insight 2: Product views, add-to-cart, and purchases
+
+  - The number of product views decreased from 25,787 in January to 23,549 in March.
+  - The number of products added to cart increased from 7,342 in January to 8,782 in March.
+  - The number of products purchased increased from 2,143 in January to 2,977 in March.
+#### These insights provide information about customer behavior during the online shopping process, including add-to-cart rate, purchase rate, and the volume of product views, add-to-cart, and purchases. This information can help the business improve its marketing strategies and optimize the sales funnel.
 
 
 
